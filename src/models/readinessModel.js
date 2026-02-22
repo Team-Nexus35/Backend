@@ -1,51 +1,49 @@
 module.exports = (sequelize, DataTypes) => {
-  const Readiness = sequelize.define("Readiness", {
-    companyName: {
+  return sequelize.define("Readiness", {
+
+    company_name: {
       type: DataTypes.STRING,
       allowNull: false
     },
+
     sector: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    country: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-    yearFounded: {
-      type: DataTypes.INTEGER,
-      allowNull: false
-    },
-    employees: {
-      type: DataTypes.INTEGER,
-      allowNull: false
-    },
-    hasFinancialRecords: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false
-    },
-    annualRevenue: {
-      type: DataTypes.FLOAT,
-      allowNull: false
-    },
-    hasTaxClearance: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false
-    },
-    hasBusinessPlan: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false
-    },
-    fundingNeed: {
-      type: DataTypes.FLOAT,
-      allowNull: false
-    },
-    growthStage: {
-      type: DataTypes.STRING,
-      allowNull: false
-    }
-  });
-  
 
-  return Readiness;
+    nationality: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+
+    business_stage: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+
+    funding_need_usd: {
+      type: DataTypes.FLOAT,
+      allowNull: false
+    },
+
+    business_registered_in: DataTypes.STRING,
+    founder_age: DataTypes.INTEGER,
+    founder_gender: DataTypes.STRING,
+    business_age_months: DataTypes.INTEGER,
+    annual_revenue_usd: DataTypes.FLOAT,
+    employees: DataTypes.INTEGER,
+    innovation_level: DataTypes.STRING,
+    has_prototype: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
+    },
+    targets_underserved: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
+    }
+
+  }, {
+    tableName: "readiness",
+    timestamps: true
+  });
 };

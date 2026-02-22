@@ -13,7 +13,7 @@ app.use(helmet());
 app.use(express.json());
 
 // Register routes
-app.use("/api/auth", authRoutes);        // 👈 ADD THIS
+app.use("/api/match", matchRoutes);        // 👈 ADD THIS
 app.use("/api/readiness", readinessRoutes); // 👈 if exists
 app.use("/api", matchRoutes);
 
