@@ -12,9 +12,6 @@ const app = express();
 app.use(cors());
 app.use(helmet());
 app.use(express.json());
-app.post("/api/auth/register", (req, res) => {
-  res.json({ message: "Direct route hit" });
-});
 
 app.get("/", (req, res) => {
   res.status(200).json({
